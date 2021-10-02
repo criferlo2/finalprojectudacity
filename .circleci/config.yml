@@ -70,7 +70,7 @@ jobs:
   test-frontend:
     docker:
       - image: circleci/node:13.8.0
-    steps:
+    # steps:
       # Checkout code from git
       # Restore from cache
       # Your job code here
@@ -78,7 +78,7 @@ jobs:
   test-backend:
     docker:
       - image: circleci/node:13.8.0
-    steps:
+    # steps:
       # Checkout code from git
       # Restore from cache
       # Your job code here
@@ -86,7 +86,7 @@ jobs:
   scan-frontend:
     docker:
       - image: circleci/node:13.8.0
-    steps:
+    # steps:
       # Checkout code from git
       # Restore from cache
       # Your job code here
@@ -94,7 +94,7 @@ jobs:
   scan-backend:
     docker:
       - image: circleci/node:13.8.0
-    steps:
+    # steps:
       # Checkout code from git
       # Restore from cache
       # Your job code here
