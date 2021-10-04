@@ -85,7 +85,7 @@ jobs:
       - run:
           name: Run test
           command: | 
-                  cd dist
+                  cd frontend
                   npm run test    
                 
   test-backend:
@@ -98,7 +98,7 @@ jobs:
       - run:
           name: Run test
           command: | 
-                  cd dist
+                  cd backend
                   npm run test    
             
   # scan-frontend:
