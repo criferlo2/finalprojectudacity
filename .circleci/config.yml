@@ -51,7 +51,7 @@ jobs:
                   cd frontend
                   npm run build
       - save_cache:
-          paths: [frontend/dist]
+          paths: [frontend/node_modules]
           key: frontend-build
 
   build-backend:
@@ -72,7 +72,7 @@ jobs:
                   cd backend
                   npm run build
       - save_cache:
-          paths: [backend/dist]
+          paths: [backend/node_modules]
           key: backend-build
 
   test-frontend:
@@ -85,6 +85,7 @@ jobs:
       - run:
           name: Run test
           command: | 
+                  cd dist
                   npm run test    
                 
   test-backend:
@@ -97,6 +98,7 @@ jobs:
       - run:
           name: Run test
           command: | 
+                  cd dist
                   npm run test    
             
   # scan-frontend:
