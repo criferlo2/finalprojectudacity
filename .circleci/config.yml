@@ -42,11 +42,12 @@ jobs:
           keys: [frontend-build]
       - run:
           name: Install dependencies
-          command: npm i    
+          command: |
+                  cd frontend
+                  npm i    
       - run:
           name: Build front-end
           command: |
-                  cd frontend
                   npm run build
       - save_cache:
           paths: [frontend/node_modules]
