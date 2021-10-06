@@ -140,7 +140,6 @@ jobs:
               --tags project=udamio-backend-${CIRCLE_WORKFLOW_ID:0:7} \
               --stack-name "backend-stack-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}"  
-              exit 1
       - run:
           name: Save dns backend
           command: |
@@ -148,7 +147,6 @@ jobs:
               --query 'Reservations[*].Instances[*].PublicDnsName' \
               --filters "Name=tag:project,Values=udamio-backend" \
               --output text >> dnsbackend.txt  
-              exit 1
       - run:
           name: Ensure front-end infrastructure exist
           command: |
@@ -157,7 +155,6 @@ jobs:
               --tags project=udamio-frontend-${CIRCLE_WORKFLOW_ID:0:7} \
               --stack-name "frontend-stack-${CIRCLE_WORKFLOW_ID:0:7}" \
               --parameter-overrides ID="${CIRCLE_WORKFLOW_ID:0:7}"  
-              exit 1
       - run:
           name: Add back-end ip to ansible inventory
           command: |
