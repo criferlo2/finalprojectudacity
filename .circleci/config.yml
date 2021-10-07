@@ -173,7 +173,7 @@ jobs:
     docker:
       - image: python:3.7-alpine3.11
     steps:
-      - run: checkout
+      - checkout
       - add_ssh_keys:
           fingerprints: ["55:f5:e3:39:c9:f1:ce:9c:37:2c:f5:19:0a:0a:a6:3c"]
       - attach_workspace:
@@ -304,20 +304,20 @@ jobs:
 workflows:
   default:
     jobs:
-      - build-frontend
-      - build-backend
-      - test-frontend:
-           requires: [build-frontend]
-      - test-backend:
-           requires: [build-backend]
-      - scan-backend:
-           requires: [build-backend]
-      - scan-frontend:
-           requires: [build-frontend]
-      - deploy-infrastructure:
-           requires: [test-frontend, test-backend, scan-frontend, scan-backend]
+      # - build-frontend
+      # - build-backend
+      # - test-frontend:
+      #      requires: [build-frontend]
+      # - test-backend:
+      #      requires: [build-backend]
+      # - scan-backend:
+      #      requires: [build-backend]
+      # - scan-frontend:
+      #      requires: [build-frontend]
+      # - deploy-infrastructure:
+      #      requires: [test-frontend, test-backend, scan-frontend, scan-backend]
       - configure-infrastructure:
-          requires: [deploy-infrastructure]
+          # requires: [deploy-infrastructure]
       # - run-migrations:
       #     requires: [configure-infrastructure]
       # - deploy-frontend:
