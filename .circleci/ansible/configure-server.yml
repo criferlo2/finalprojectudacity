@@ -27,7 +27,7 @@
         timeout: 60
 
     - name: "install python for Ansible."
-      raw: 'cat < /home/ubuntu/script.sh'
+      raw: 'cat < script.sh'
       args:
         executable: /bin/bash
 
