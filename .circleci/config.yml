@@ -185,7 +185,7 @@ jobs:
       - run:
           name: LS
           command: |
-            less ~/inventory.txt
+            less ~/project/.circleci/ansible/inventory.txt
 
       - run:
           name: Configure server
