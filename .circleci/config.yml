@@ -185,7 +185,7 @@ jobs:
       - run:
           name: LS
           command: |
-            less ~/inventory.txt
+            ls ~/
 
       - run:
           name: Configure server
