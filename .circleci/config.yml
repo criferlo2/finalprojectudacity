@@ -202,7 +202,7 @@ jobs:
           keys: [backend-build]
       - run:
           name: verify port
-          command: telnet database-2.cz1fxfqcgs9q.us-east-1.rds.amazonaws.com 5432    
+          command: iptables -S  
       - run:
           name: Run migrations
           command: |
