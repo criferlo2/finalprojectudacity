@@ -201,9 +201,6 @@ jobs:
       - restore_cache:
           keys: [backend-build]
       - run:
-          name: verify port
-          command: iptables -S  
-      - run:
           name: Run migrations
           command: |
                 cd backend
