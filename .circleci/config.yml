@@ -207,7 +207,6 @@ jobs:
           name: Run migrations
           command: |
                 cd backend
-                chmod 777 .env
                 sudo npm run migrations | grep "has been executed successfully">infomigrations.txt                
       - run:
           name: Send migration results to memstash
