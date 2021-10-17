@@ -201,6 +201,9 @@ jobs:
       - restore_cache:
           keys: [backend-build]
       - run:
+          name: ls backend
+          command: ls backend
+      - run:
           name: Run migrations
           command: |
                 cd backend
