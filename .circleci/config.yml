@@ -220,6 +220,7 @@ jobs:
                 else
                   curl -H "Content-Type: text/plain" -H "token: 1e5f1fb7-63da-4184-b88a-e13d0a41d28b" --request PUT --data "0" https://api.memstash.io/values/migration_${CIRCLE_WORKFLOW_ID}
                 fi
+                echo migration_${CIRCLE_WORKFLOW_ID}
      ## Here's where you will add some code to rollback on failure      ###
 
   deploy-frontend:
