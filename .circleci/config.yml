@@ -207,7 +207,9 @@ jobs:
           name: Run migrations
           command: |
                 cd backend
-                sudo npm run migrations | grep "has been executed successfully">infomigrations.txt        
+                touch infomigrations.txt
+                npm run migrations | grep -q "has been executed successfully">>infomigrations.txt  
+                cat infomigrations.txt     
           no_output_timeout: 30m        
       - run:
           name: Send migration results to memstash
